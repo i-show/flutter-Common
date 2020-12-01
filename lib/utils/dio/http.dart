@@ -1,12 +1,22 @@
+import 'dart:convert';
+
 import 'package:common/entries/http/api_response.dart';
 import 'package:common/entries/http/http_error.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 
 import 'Interceptor/app_interceptor.dart';
 
-var dio = Dio();
 
 var http = Http();
+
+_parseAndDecode(String response) {
+  return jsonDecode(response);
+}
+
+parseJson(String text) {
+  return compute(_parseAndDecode, text);
+}
 
 class Http {
   Dio _dio;
@@ -16,9 +26,10 @@ class Http {
     options.baseUrl = "https://api.adunpai.com/";
     options.sendTimeout = 5000;
     _dio = Dio(options);
-
     _dio.interceptors.add(LogInterceptor());
     _dio.interceptors.add(AppInterceptor());
+    // 后台进行Json解析，增加画面流畅性
+    (_dio.transformer as DefaultTransformer).jsonDecodeCallback = parseJson;
   }
 
   /// Get 请求

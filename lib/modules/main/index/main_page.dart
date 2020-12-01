@@ -41,7 +41,9 @@ class _MainPageState extends State<MainPage> {
     // Response response = await dio.get("https://api.adunpai.com/v1/rakechain/select");
     // Response response = await dio.get("http://test-video.yunkaiwangluo.net:8000/api/member/info/3");
     // var res = ApiResponse<RakeChainContainerEntity>.fromJson(response.data);
+    // var res = await http.get<RakeChainContainerEntity>("v1/rakechain/select?uuid=1112");
     var res = await http.get<RakeChainContainerEntity>("v1/rakechain/select?uuid=1112");
+
     // var res = await dio.requestGet("https://www.baidu.com/");
     if (res.isSuccess) {
       print("request is success");
