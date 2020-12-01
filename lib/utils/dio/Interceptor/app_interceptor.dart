@@ -1,5 +1,5 @@
-import 'package:common/entries/http/api_response.dart';
-import 'package:common/entries/http/http_error.dart';
+import 'package:app/entries/http/api_response.dart';
+import 'package:app/entries/http/http_error.dart';
 import 'package:dio/dio.dart';
 
 class AppInterceptor extends Interceptor {

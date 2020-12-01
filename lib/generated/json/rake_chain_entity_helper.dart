@@ -1,4 +1,4 @@
-import 'package:common/entries/rake_chain_entity.dart';
+import 'package:app/entries/rake_chain_entity.dart';
 
 rakeChainEntityFromJson(RakeChainEntity data, Map<String, dynamic> json) {
 	if (json['address'] != null) {

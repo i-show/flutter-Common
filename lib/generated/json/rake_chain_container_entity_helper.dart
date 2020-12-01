@@ -1,5 +1,5 @@
-import 'package:common/entries/rake_chain_container_entity.dart';
-import 'package:common/entries/rake_chain_entity.dart';
+import 'package:app/entries/rake_chain_container_entity.dart';
+import 'package:app/entries/rake_chain_entity.dart';
 
 rakeChainContainerEntityFromJson(RakeChainContainerEntity data, Map<String, dynamic> json) {
 	if (json['results'] != null) {

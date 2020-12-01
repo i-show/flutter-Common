@@ -1,6 +1,6 @@
-import 'package:common/modules/main/index/main_view_model.dart';
+import 'package:app/modules/main/index/main_view_model.dart';
+import 'package:app/utils/ext/widget_ext.dart';
 import 'package:flutter/material.dart';
-import 'package:common/utils/ext/widget_ext.dart';
 import 'package:provider/provider.dart';
 
 class MinePage extends StatefulWidget {
@@ -13,8 +13,6 @@ class _MinePageState extends State<MinePage> {
   Widget build(BuildContext context) {
     return Selector<MainViewModel, int>(
         builder: (context, data, child) => Text(data.toString()),
-        selector: (context, vm) => vm.count)
-        .intoCenter()
-        .intoContainer();
+        selector: (context, vm) => vm.count).intoCenter().intoContainer();
   }
 }

@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:common/providers.dart';
-import 'package:common/utils/dio/http.dart';
+import 'package:app/providers.dart';
+import 'package:app/utils/dio/http.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';

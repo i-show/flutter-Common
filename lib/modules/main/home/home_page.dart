@@ -1,7 +1,5 @@
-import 'package:common/modules/main/index/main_view_model.dart';
-import 'package:common/utils/dio/http.dart';
-import 'package:common/utils/ext/widget_ext.dart';
-import 'package:dio/dio.dart';
+import 'package:app/modules/main/index/main_view_model.dart';
+import 'package:app/utils/ext/widget_ext.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

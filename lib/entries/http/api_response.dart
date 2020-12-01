@@ -1,4 +1,4 @@
-import 'package:common/generated/json/base/json_convert_content.dart';
+import 'package:app/generated/json/base/json_convert_content.dart';
 
 class ApiResponse<T> {
   T data;
