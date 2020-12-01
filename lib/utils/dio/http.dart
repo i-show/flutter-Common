@@ -52,7 +52,7 @@ class Http {
   }
 
   /// 重新封装后的Post请求
-  Future<ApiResponse<T>> requestPost<T>(
+  Future<ApiResponse<T>> post<T>(
     String path, {
     data,
     Map<String, dynamic> params,
@@ -78,7 +78,7 @@ class Http {
   }
 
   /// Post 请求
-  Future<ApiResponse<T>> requestPut<T>(
+  Future<ApiResponse<T>> put<T>(
     String path, {
     data,
     Map<String, dynamic> params,
@@ -104,7 +104,7 @@ class Http {
   }
 
   /// Delete 请求
-  Future<ApiResponse<T>> requestDelete<T>(String path,
+  Future<ApiResponse<T>> delete<T>(String path,
       {data, Map<String, dynamic> params, Options options, CancelToken token}) async {
     try {
       Response response = await _dio.delete(path, data: data, queryParameters: params, options: options, cancelToken: token);
