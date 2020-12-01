@@ -1,9 +1,8 @@
+import 'package:common/entries/rake_chain_container_entity.dart';
 import 'package:common/modules/main/home/home_page.dart';
 import 'package:common/modules/main/index/main_view_model.dart';
 import 'package:common/modules/main/mine/mine_page.dart';
-import 'package:common/utils/dio/Interceptor/app_interceptor.dart';
-import 'package:common/utils/ext/dio/dio_ext.dart';
-import 'package:dio/dio.dart';
+import 'package:common/utils/dio/http.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -39,23 +38,15 @@ class _MainPageState extends State<MainPage> {
   }
 
   void getHttp() async {
-    try {
-      var dio = Dio();
-      dio.interceptors.add(LogInterceptor());
-      dio.interceptors.add(AppInterceptor());
-      // Response response = await dio.get("https://api.adunpai.com/v1/rakechain/select");
-      // Response response = await dio.get("http://test-video.yunkaiwangluo.net:8000/api/member/info/3");
-      // var res = ApiResponse<RakeChainContainerEntity>.fromJson(response.data);
-      var res = await dio.requestGet("http://test-video.yunkaiwangluo.net:8000/api/member/info/3");
-      // var res = await dio.requestGet("https://www.baidu.com/");
-      if (res.isSuccess) {
-        print("request is success");
-      } else {
-        print("request failed, code = ${res.code}, message = ${res.message}");
-      }
-    } catch (e) {
-      print("catch error = ${e.error}");
-      print(e);
+    // Response response = await dio.get("https://api.adunpai.com/v1/rakechain/select");
+    // Response response = await dio.get("http://test-video.yunkaiwangluo.net:8000/api/member/info/3");
+    // var res = ApiResponse<RakeChainContainerEntity>.fromJson(response.data);
+    var res = await http.get<RakeChainContainerEntity>("v1/rakechain/select?uuid=1112");
+    // var res = await dio.requestGet("https://www.baidu.com/");
+    if (res.isSuccess) {
+      print("request is success");
+    } else {
+      print("request failed, code = ${res.code}, message = ${res.message}");
     }
   }
 }
