@@ -1,7 +1,8 @@
+
+/// HttpError
 class HttpError {
   int code;
   String msg;
-
 
   static HttpError timeOut() {
     var error = HttpError();

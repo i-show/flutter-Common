@@ -44,14 +44,11 @@ class _MainPageState extends State<MainPage> {
     // Response response = await dio.get("https://api.adunpai.com/v1/rakechain/select");
     // Response response = await dio.get("http://test-video.yunkaiwangluo.net:8000/api/member/info/3");
     // var res = ApiResponse<RakeChainContainerEntity>.fromJson(response.data);
-    // var res = await http.get<RakeChainContainerEntity>("v1/rakechain/select?uuid=1112");
     var res = await http.get<RakeChainContainerEntity>("v1/rakechain/select?uuid=1112");
+    // var res = await http.get<RakeChainContainerEntity>("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1606902435173&di=88200823b8bfc2faf9fa23fa9f178365&imgtype=0&src=http%3A%2F%2Fa4.att.hudong.com%2F27%2F67%2F01300000921826141299672233506.jpg");
 
     // var res = await dio.requestGet("https://www.baidu.com/");
     if (res.isSuccess) {
-      print("${res.data.toJson()}");
-      //log("${res.data.toJson()}");
-      log(convert.jsonEncode(res.data), name: "yhy");
       print("request is success");
     } else {
       print("request failed, code = ${res.code}, message = ${res.message}");

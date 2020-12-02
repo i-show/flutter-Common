@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:app/entries/http/api_response.dart';
 import 'package:app/entries/http/http_error.dart';
+import 'package:common/utils/dio/interceptor/dio_log_interceptor.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 
@@ -22,11 +23,12 @@ class Http {
   Dio _dio;
 
   void init() {
+    // 配置Dio基础信息
     var options = BaseOptions();
     options.baseUrl = "https://api.adunpai.com/";
     options.sendTimeout = 5000;
     _dio = Dio(options);
-    _dio.interceptors.add(LogInterceptor());
+    _dio.interceptors.add(DioLogInterceptor());
     _dio.interceptors.add(AppInterceptor());
     // 后台进行Json解析，增加画面流畅性
     (_dio.transformer as DefaultTransformer).jsonDecodeCallback = parseJson;
