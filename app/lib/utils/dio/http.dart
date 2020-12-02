@@ -27,6 +27,7 @@ class Http {
     options.sendTimeout = 5000;
     _dio = Dio(options);
     _dio.interceptors.add(LogInterceptor());
+    _dio.interceptors.add(AppInterceptor());
     // 后台进行Json解析，增加画面流畅性
     (_dio.transformer as DefaultTransformer).jsonDecodeCallback = parseJson;
   }
