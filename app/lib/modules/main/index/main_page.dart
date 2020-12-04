@@ -1,4 +1,4 @@
-import 'dart:developer';
+import 'dart:ui' as ui;
 
 import 'package:app/entries/rake_chain_container_entity.dart';
 import 'package:app/modules/main/home/home_page.dart';
@@ -7,7 +7,6 @@ import 'package:app/modules/main/mine/mine_page.dart';
 import 'package:app/utils/dio/http.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'dart:convert' as convert;
 
 class MainPage extends StatefulWidget {
   @override
@@ -44,6 +43,9 @@ class _MainPageState extends State<MainPage> {
     // Response response = await dio.get("https://api.adunpai.com/v1/rakechain/select");
     // Response response = await dio.get("http://test-video.yunkaiwangluo.net:8000/api/member/info/3");
     // var res = ApiResponse<RakeChainContainerEntity>.fromJson(response.data);
+
+    var paint = Paint();
+
     var res = await http.get<RakeChainContainerEntity>("v1/rakechain/select?uuid=1112");
     // var res = await http.get<RakeChainContainerEntity>("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1606902435173&di=88200823b8bfc2faf9fa23fa9f178365&imgtype=0&src=http%3A%2F%2Fa4.att.hudong.com%2F27%2F67%2F01300000921826141299672233506.jpg");
 
