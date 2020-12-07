@@ -24,7 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   # 基础的Common库
-  common:
+  common_libs:
     path: ../
 
   provider: 4.3.2+2

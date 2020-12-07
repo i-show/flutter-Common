@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:app/entries/http/api_response.dart';
 import 'package:app/entries/http/http_error.dart';
-import 'package:common/utils/dio/interceptor/dio_log_interceptor.dart';
+import 'package:common_libs/utils/dio/interceptor/dio_log_interceptor.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 
