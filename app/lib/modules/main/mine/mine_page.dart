@@ -1,7 +1,7 @@
 import 'package:app/modules/main/index/main_view_model.dart';
-import 'package:app/utils/ext/widget_ext.dart';
+import 'package:common_libs/provider/selector_mediator.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:app/utils/ext/widget_ext.dart';
 
 class MinePage extends StatefulWidget {
   @override
@@ -11,8 +11,8 @@ class MinePage extends StatefulWidget {
 class _MinePageState extends State<MinePage> {
   @override
   Widget build(BuildContext context) {
-    return Selector<MainViewModel, int>(
-        builder: (context, data, child) => Text(data.toString()),
-        selector: (context, vm) => vm.count).intoCenter().intoContainer();
+    return SelectorMediator<MainViewModel, int>(
+        selector: (vm) => vm.count,
+        builder: (context, data) => Text(data.toString())).intoCenter();
   }
 }
