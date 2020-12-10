@@ -10,7 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   dio: ^3.0.10
-  flutter_screenutil: 3.2.0
+  flutter_screenutil: 4.0.0-beta2
   # State
   provider: ^4.3.2+2
 
