@@ -9,9 +9,9 @@ class SelectorMediator<VM extends ChangeNotifier, S> extends StatelessWidget{
   final S Function(VM value) selector;
 
   SelectorMediator( {
-    @required this.builder,
-    @required this.selector,
     Key key,
+    @required this.selector,
+    @required this.builder,
   }) : super(key: key);
 
   @override
