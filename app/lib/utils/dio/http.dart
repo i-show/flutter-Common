@@ -11,6 +11,8 @@ import 'Interceptor/app_interceptor.dart';
 
 var http = Http();
 
+Dio get dio => http._dio;
+
 _parseAndDecode(String response) {
   return jsonDecode(response);
 }
