@@ -17,7 +17,6 @@ class SelectorMediator<VM extends ChangeNotifier, S> extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     S s = context.select<VM, S>(selector);
-    log("s= $s");
     return builder(context, s);
   }
 }
