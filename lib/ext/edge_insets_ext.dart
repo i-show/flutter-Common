@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+/// [EdgeInsets] 的扩展函数
 extension EdgeInsetsExt on num {
   /// 距离顶部距离
   ///[EdgeInsets.only]
