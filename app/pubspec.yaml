@@ -29,7 +29,7 @@ dependencies:
 
   provider: 4.3.2+2
   dio: 3.0.10
-  get: 3.23.1
+
 
 
   # The following adds the Cupertino Icons font to your application.

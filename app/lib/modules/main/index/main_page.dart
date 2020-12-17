@@ -24,7 +24,6 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    Log.d("_MainPageState", "build --------");
     var _pageController = PageController();
     final TestController c = Get.put(TestController());
 
@@ -32,6 +31,7 @@ class _MainPageState extends State<MainPage> {
       body: PageView.builder(
         itemCount: 2,
         controller: _pageController,
+        physics: NeverScrollableScrollPhysics(),
         onPageChanged: (index) => c.currentIndex = index,
         itemBuilder: (context, index) => _tabList[index],
       ),

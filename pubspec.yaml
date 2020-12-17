@@ -13,7 +13,7 @@ dependencies:
   flutter_screenutil: 4.0.0-beta2
   # State
   provider: ^4.3.2+2
-
+  get: ^3.23.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
