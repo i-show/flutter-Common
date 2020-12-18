@@ -1,3 +1,4 @@
+import 'package:app/entries/rake_chain_entity.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -38,4 +39,14 @@ class TestController extends GetxController {
   set currentIndex(value) => _currentIndex.value = value;
 
   get currentIndex => _currentIndex.value;
+
+  get tab2Name => _name.value + _currentIndex.value.toString();
+
+  final _testEntry = RakeChainEntity().obs;
+
+  get testEntry => _testEntry.value;
+
+  set testEntry(val) => _testEntry.value = val;
+
+  get tab2Name2 => "${_name.value}${_testEntry.value.address??""}";
 }

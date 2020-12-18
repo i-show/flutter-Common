@@ -1,4 +1,4 @@
-import 'package:app/utils/log.dart';
+import 'package:common_libs/utils/log.dart';
 import 'package:flutter/material.dart';
 
 class MinePage extends StatefulWidget {

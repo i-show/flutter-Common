@@ -1,7 +1,7 @@
+import 'package:app/entries/rake_chain_entity.dart';
 import 'package:app/modules/main/home/home_page.dart';
 import 'package:app/modules/main/index/main_view_model.dart';
 import 'package:app/modules/main/mine/mine_page.dart';
-import 'package:app/utils/log.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,10 +16,12 @@ class _MainPageState extends State<MainPage> {
   List _tabList = [HomePage(), MinePage()];
 
   int _tabIndex = 0;
+  var entry = RakeChainEntity();
 
   @override
   void initState() {
     super.initState();
+    entry.address = "H1";
   }
 
   @override
@@ -36,11 +38,15 @@ class _MainPageState extends State<MainPage> {
         itemBuilder: (context, index) => _tabList[index],
       ),
       bottomNavigationBar: Obx(() => BottomNavigationBar(
-              onTap: (index) => _pageController.jumpToPage(index),
+              onTap: (index) {
+                _pageController.jumpToPage(index);
+                entry.address = "B$index";
+                c.testEntry = entry;
+              },
               currentIndex: c.currentIndex,
               items: [
                 BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-                BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Mine')
+                BottomNavigationBarItem(icon: Icon(Icons.settings), label: c.tab2Name2)
               ])),
     );
   }
