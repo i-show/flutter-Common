@@ -1,22 +1,21 @@
 import 'dart:io';
 
-import 'package:app/providers.dart';
 import 'package:app/utils/dio/http.dart';
+import 'package:app/utils/router/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:provider/provider.dart';
 
 import 'modules/main/index/main_page.dart';
+import 'package:get/get.dart';
 
 void main() {
   http.init();
-  runApp(MultiProvider(providers: providers, child: MyApp()));
+  runApp(MyApp());
 
   if (Platform.isAndroid) {
     //设置Android头部的导航栏透明
-    SystemUiOverlayStyle systemUiOverlayStyle = SystemUiOverlayStyle(
-        statusBarColor: Colors.transparent,
-        statusBarIconBrightness: Brightness.dark);
+    SystemUiOverlayStyle systemUiOverlayStyle =
+        SystemUiOverlayStyle(statusBarColor: Colors.transparent, statusBarIconBrightness: Brightness.dark);
 
     SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
   } else {
@@ -25,17 +24,19 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-
-    return MaterialApp(
+    
+    return GetMaterialApp(
       title: 'Flutter Common',
       theme: ThemeData(
+        backgroundColor: Colors.red,
+        scaffoldBackgroundColor: Colors.grey,
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MainPage(),
+      getPages: AppRouter.pages,
     );
   }
 }

@@ -2,6 +2,7 @@ import 'package:app/entries/rake_chain_entity.dart';
 import 'package:app/modules/main/home/home_page.dart';
 import 'package:app/modules/main/index/main_view_model.dart';
 import 'package:app/modules/main/mine/mine_page.dart';
+import 'package:app/utils/dio/http.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -49,9 +50,5 @@ class _MainPageState extends State<MainPage> {
                 BottomNavigationBarItem(icon: Icon(Icons.settings), label: c.tab2Name2)
               ])),
     );
-  }
-
-  void _pageChanged(int index) {
-    print('_pageChanged');
   }
 }
